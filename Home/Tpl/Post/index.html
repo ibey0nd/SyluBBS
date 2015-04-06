@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>查看帖子</title>
+	<script type="text/javascript" charset="utf-8" src="__PUBLIC__/ueditor/ueditor.config.js"></script>
+   	 <script type="text/javascript" charset="utf-8" src="__PUBLIC__/ueditor/ueditor.all.min.js"> </script>
+   	 <style>
+		.newcomtent{
+			margin-top: 30px;
+		}
+		hr{
+			color:#ff0000;
+			/*width: 4px;*/
+		}
+		.commentarea{
+			/*margin-top: 20px;*/
+		}
+   	 </style>
+</head>
+<body>
+	<include file="Post:head" />
+	<include file="Post:left" />
+
+	<div class="col-lg-8">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					{$topicdata.title}
+				</div>
+				<div class="panel-body">
+
+					<div class="panel">
+						<div class="panel-body">
+							
+							
+							
+							
+
+							<!-- 一个帖子样式完成start -->
+							<img class="userpicture" src="__PUBLIC__/img/50.png" />
+							<div class="postcontent">
+								{$topicdata.content}
+								<div class="post-info">
+									<ul class="ul-inline">
+										<li><code>• {$topicdata.cid}&nbsp;<img src="__PUBLIC__/img/picture.png"></code></li>
+
+										<li><code><b><a href="__APP__/User/index/uid/{$topicdata.uid}">• {$topicdata.uidname}&nbsp;</a><img src="__PUBLIC__/img/phone.png"></b></code> </li>
+
+										<li><code><b>• {$topicdata.posttime|date='Y-m-d H:i:s',###}&nbsp;<img src="__PUBLIC__/img/phone.png"></b></code> </li>
+									</ul>
+								</div>
+							</div>
+							<hr />
+							<!-- 此处显示所有的评论start -->
+						<foreach name="commentList" item="vo">
+							<img class="userpicture" src="__PUBLIC__/img/50.png" />
+							<div class="postcontent">
+								{$vo.content}
+								<p style="text-align:right">• <b><strong>{$vo.floor}楼</strong></b>&nbsp;</p>
+								<div class="post-info">
+									<ul class="ul-inline commentarea">
+
+										<li><code><b>• {$vo.uid}&nbsp;<img src="__PUBLIC__/img/phone.png"></b></code> </li>
+
+										<li><code><b>• {$vo.time|date='Y-m-d H:i:s',###}&nbsp;<img src="__PUBLIC__/img/phone.png"></b></code> </li>
+
+										
+									</ul>
+									
+								</div>
+							</div>
+						</foreach>
+							
+
+
+
+
+
+							<!-- 此处显示所有的评论 end-->
+
+							<!-- 回帖区域start -->
+							<div class="row newcomtent">
+								
+								<div class="col-lg-12">
+									<form action="__APP__/Comments/add" method="post">
+										
+										<script id="editor" type="text/plain" style="height:150px;">楼主说的太对了，必须赞你啊</script>
+
+										<input type="hidden" name="tid" value="{$topicdata.tid}"/>
+
+										<div class="newPost">
+											<input type="submit" class="btn btn-success btn-lg btn-block" value="回帖">
+										</div>
+									</form>
+								</div>
+								
+								
+							</div>
+							<!-- 回帖区域end -->
+
+							
+							
+							
+							
+
+
+
+
+
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+<script>
+	var ue = UE.getEditor('editor');
+
+</script>
+
+<include file="Post:footer"/>
+	
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+	<!-- container-fluid -->
+	<head>
+		<title>网站后台管理</title>
+		<meta charset="UTF-8" />
+     	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/bootstrap-responsive.min.css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/unicorn.main.css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/unicorn.grey.css" class="skin-color" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+		<style type="text/css">
+
+			.comment{
+				text-align: center;
+			}
+
+			.comment a:hover{
+				color: #FF0000;
+			}
+
+			td{
+				text-align: center;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		
+		<include file="Common:common"/>
+		
+		<div id="content">
+			<div id="content-header">
+				<h1>后台管理首页</h1>
+			</div>
+			<ol class="breadcrumb">
+				  <li><a href="__APP__/Index/index">首页</a></li>
+				  <li class="active">帖子管理</li>
+			</ol>
+
+
+			<!-- 主内容区-->
+
+			<form class="form-inline definewidth m20" name="queryForm" action="__APP__/Topic/queryTopic" method="post">
+			    板块名称:<select name="cid">
+			    <option value="0">全部</option>
+				 <foreach name="clubList" item='vo' > 
+				 	<option value="{$vo.cid}">{$vo.name}</option> 
+				 </foreach>
+				</select>&nbsp;&nbsp; 
+			
+			    <button type="submit" class="btn btn-primary">查询</button>
+
+			</form>
+
+
+			<table class="table table-bordered table-hover definewidth m10">
+			    <thead>
+			    <tr>
+			    	<th>帖子编号</th>
+			        <th>帖子标题</th>
+			        <th>板块名称</th>
+			        <th>发帖人</th>
+			        <th>发帖时间</th>
+			        <th>评论数目</th>
+			        <th>管理操作</th>
+			    </tr>
+			    </thead>
+
+			    <foreach name="data" item='vo'>
+			    	<tr class="info">
+			    		<td>{$vo.tid}</td>
+			    		<td>{$vo.title}</td>
+		                <td>{$vo.clubname}</td>
+		                <td>{$vo.uname}</td>
+		                <td>{$vo.posttime|date='Y-m-d H:i:s',###}</td>
+		                <td class="comment"><a href="__APP__/Topic/commentTopic/tid/{$vo.tid}">共有{$vo.comment}条</a></td>
+		                <td class="comment"><a href="__APP__/Topic/deleteTopic/tid/{$vo.tid}">删除</a></td>
+			    	</tr>
+			    </foreach></table>
+
+			    <p style="font-size:17px" class="text-center">总共{$pageshow}</p>
+			
+		</div>
+		
+
+	</body>
+</html>

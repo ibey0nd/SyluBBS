@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>修改资料</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css">
+          <link rel="stylesheet" href="__PUBLIC__/css/bootstrap-theme.min.css">
+          <script src="__PUBLIC__/js/bootstrap.min.js"></script>
+</head>
+
+<include file='Post:head'/>
+
+<body>
+      <div class="row left-list">
+            
+            <div class="col-lg-2 col-lg-offset-1">
+                  <div class="panel panel-default">
+                        <div class="panel-heading">
+                              用户操作
+                        </div>
+                        <div class="panel-body">
+                              <ul class="list-unstyled list-topic">
+                                          <li><a href="__APP__/User/profile/id/1"><img src="__PUBLIC__/img/tag.png">&nbsp;&nbsp;<font color="#333333">修改密码</font></a></li>
+                                           <li><a href="__APP__/User/profile/id/2"><img src="__PUBLIC__/img/tag.png">&nbsp;&nbsp;<font color="#333333">修改资料</font></a></li> 
+                              </ul>
+                        </div>
+                  </div>
+            </div>
+
+
+
+              <div class="col-lg-4 col-lg-offset-1">
+                  <div class="panel panel-info">
+                        <div class="panel-heading">
+                              修改资料
+                        </div>
+                        <div class="panel-body">
+                              <form class="form" role="form" action="__APP__/User/doEdit" onsubmit="return Edit()" method="post">
+                                   <div class="form-group"> 
+                                            <div class="input-group">
+                                                                  <div class="input-group">
+                                                                         <div class="input-group-addon">真实姓名</div>
+                                                                                <input class="form-control" type="text" name="realname" id="realname" value="{$muser.realname}">
+                                                                  </div>
+                                           </div>
+                                 </div>
+
+                                   <div class="form-group"> 
+                                            <div class="input-group">
+                                                                  <div class="input-group">
+                                                                         <div class="input-group-addon">手机号码</div>
+                                                                                <input class="form-control" type="text"  value="{$muser.mobile}" name="mobile" id="mobile" placeholder="Enter mobile">
+                                                                  </div>
+                                           </div>
+                                 </div>
+
+                                 <div class="form-group"> 
+                                            <div class="input-group">
+                                                                  <div class="input-group">
+                                                                         <div class="input-group-addon">联系邮箱</div>
+                                                                                <input class="form-control" type="email"  value="{$muser.email}" name="email" id="email" placeholder="Enter email">
+                                                                  </div>
+                                           </div>
+                                 </div>
+                                           
+
+                                    <div class="form-group"> 
+                                            <div class="input-group">
+                                                                  <div class="input-group">
+                                                                         <div class="input-group-addon">个人说明</div>
+                                                                                
+                                                                                <textarea name="message" id="message" cols="35" rows="6">{$muser.message}</textarea>
+                                                                  </div>
+                                           </div>
+                                 </div>
+
+
+                                   <input type="submit" class="btn btn-warning  btn-lg btn-block" value="修改信息">
+                             </form>
+                        </div>
+                  </div>
+            </div>
+      
+           
+
+      </div>
+﻿              
+
+
+
+     
+</body>
+
+<script>
+      function Edit () {
+           
+            if (document.getElementById('realname').value=="" || document.getElementById('mobile').value=="" || document.getElementById('messge').value==""|| document.getElementById('email').value=="") 
+            {
+                        alert("请认真填写，好像有没填的哦~~~");
+                        return false;
+            };
+      }
+</script>
+</html>

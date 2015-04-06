@@ -1,0 +1,168 @@
+.list-topic li{
+	height: 40px;
+}
+/*板块*/
+.list-topic a{
+	padding: 5px 20px;
+	width: 150px;
+	border-radius: 4px;
+	display: block;background: #FFF;
+	border: 1px solid #ececec;
+	font-size: 16px;
+	text-decoration: none;
+	
+}
+.list-topic a:hover{
+	font-size: 18px;
+	color: #888;
+}
+
+/*帖子列表样式*/
+.postcontent{
+	margin-top: 7px;
+	margin-left: 65px;
+	padding-left: 60px;
+	background: #FFF;
+	border:1px solid #ececec;
+	border-radius:4px;
+	padding:10px;
+	box-shadow:1px 2px 3px #e9fbe4;
+}
+/*标题中连接样式*/
+a.title{
+	padding: 5px 10px;
+	border-radius: 4px;
+	background: #FFF;
+	font-size: 14px;
+	text-decoration: none;
+	color: #333311;
+	position: relative;
+
+
+}
+/*鼠标悬浮样式*/
+a.title:hover{
+	
+	/*text-shadow: 2px 0px 1px #333;*/
+	font-weight:bold;
+	color:#83b724;text-shadow:1px 1px 2px #fff;
+}
+.post-info{
+	color: #999;
+	margin-top: 5px;
+}
+.ul-inline{
+	margin-bottom: 0;
+	  padding-left: 0;
+	  margin-left: -5px;
+	  list-style: none;
+}
+.ul-inline > li {
+  display: inline-block;
+  padding-right: 5px;
+  padding-left: 5px;
+  margin-left: 12px;
+}
+
+.userpicture{
+	float: left;
+	margin-top: 12px;
+}
+
+.newPost{
+	text-align: center;
+	margin-top: 40px;
+}
+.myPostBtn{
+	width: 40px;
+	height: 40px;
+}
+.left-list{
+	margin-top: 50px;
+}
+.footer{
+	margin-bottom: 20px;
+	height: 60px;
+	line-height: 30px;
+	color: #bbb;
+	text-align: center;
+	border-top: 1px solid #ececec;
+	margin-top: 20px;
+	display:block;
+}
+.footer a{color: #999}
+
+/*修改thinkphp的分页类样式*/
+.page{
+	text-align: center;
+	margin-top: 30px;
+	padding:3px;
+
+}
+div.page a{
+	border:#2c2c2c 1px solid;
+	padding:2px 5px;
+	background:#2c2c2c;
+	color:#fff;
+	margin:0 2px 0 0;
+	text-decoration:none;
+
+}
+div.page a:hover{
+	border:#aad83e 1px solid;
+	background:#aad83e;
+	color:#fff;
+}
+div.page a:active{
+	border:#aad83e 1px solid;
+	background:#aad83e;
+	color:#fff;
+}
+div.page span.current{
+	border:#aad83e 1px solid;
+	padding:2px 5px;
+	font-weight:bold;
+	background:#aad83e;
+	color:#fff;
+	margin:0 2px 0 0;
+}
+div.page span.disabled{
+	border:#f3f3f3 1px solid;
+	padding:2px 5px;
+	color:#ccc;
+	margin:0 2px 0 0;
+}
+
+/*用户中心左边的bar样式*/
+.slide-user{
+	margin-top: 30px;
+
+}
+.user-info h4{
+	margin-left: 60px;
+}
+
+.show{
+	margin-left: 20px;
+	margin-top: 20px;
+}
+
+/*为帖子增加评论数量显示*/
+.pull-right {
+	float: right!important;
+	margin-top: 13px;
+}
+.badge {
+	display: inline-block;
+	min-width: 10px;
+	padding: 3px 7px;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 1;
+	color: #fff;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: baseline;
+	background-color: #999;
+	border-radius: 10px;
+}

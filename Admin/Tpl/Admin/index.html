@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<!-- container-fluid -->
+	<head>
+		<title>网站后台管理</title>
+		<meta charset="UTF-8" />
+     	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/bootstrap-responsive.min.css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/unicorn.main.css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/unicorn.grey.css" class="skin-color" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+		<style type="text/css">
+
+		.admin{
+				text-align: center;
+			}
+
+		.admin a:hover{
+				color: #FF0000;
+			}
+			td{
+				text-align: center;
+			}
+		</style>
+		
+	</head>
+
+	<body>
+		
+		<include file="Common:common"/>
+	
+		<div id="content">
+			<div id="content-header">
+				<h1>后台管理首页</h1>
+			</div>
+			<ol class="breadcrumb">
+				  <li><a href="__APP__/Index/index">首页</a></li>
+				  <li class="active">管理员管理</li>
+			</ol>
+
+
+			<!-- 主内容区 -->
+
+			 <form class="form-inline definewidth m20" name="queryForm" action="__APP__/Admin/add.html" method="post">
+			    <button style="margin-right:40px;margin-top:-15px;float:right;margin-bottom:20px;" type="submit" class="btn btn-primary">添加新管理员</button>
+			    </form>
+
+			<table class="table table-bordered table-hover definewidth m10">
+			    <thead>
+			    <tr>
+			    	<th>管理员Id</th>
+			        <th>管理员姓名</th>
+			     
+			        <th>管理操作</th>
+			    </tr>
+			    </thead>
+
+			    <foreach name="data" item='vo'>
+			    	<tr class="info">
+			    		<td>{$vo.id}</td>
+			    		<td>{$vo.username}</td>
+		                
+		                <td class="admin"><a href="__APP__/Admin/editAdmin/id/{$vo.id}"> 修改 |</a>
+		                	<a href="__APP__/Admin/deleteAdmin/id/{$vo.id}"> 删除</a></td>
+			    	</tr>
+			    </foreach></table>
+
+
+		</div>
+
+	</body>
+</html>

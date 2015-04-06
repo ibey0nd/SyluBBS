@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+             <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>微BBS--发表新贴</title> 
+	<link href="__PUBLIC__/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="__PUBLIC__/css/my.css">
+	 <script type="text/javascript" charset="utf-8" src="__PUBLIC__/ueditor/ueditor.config.js"></script>
+   	 <script type="text/javascript" charset="utf-8" src="__PUBLIC__/ueditor/ueditor.all.min.js"> </script>
+</head>
+
+<body>
+	<include file="Post:head" />
+	<include file="Post:left" />
+
+	<div class="col-lg-8">
+			<div class="panel panel-default panel-danger">
+				<div class="panel-heading">
+					发表新帖		
+				</div>
+				<div class="panel-body">
+
+					<div class="panel">
+						<div class="panel-body">
+							
+							<form action="__APP__/Post/newPost" class="form-horizontal" role="form" method="post" id="topicForm">
+								<div class="form-group">
+								    <label for="inputTitle" class="col-sm-1 control-label">标题</label>
+
+								    <div class="col-sm-8">
+								    		 <input type="text" name="title" class="form-control" id="inputTitle" placeholder="输入您的标题...">
+								    </div>
+								    <div class="col-sm-2">
+								    		 <select name="cid" class="form-control">
+								    		<foreach name="clubList" item="club">
+											  <option value="{$club.cid}">{$club.name}</option>
+										</foreach>
+										
+										</select>
+								    </div>
+								</div>
+								<div class="form-group">
+									<label for="inputcontent" class="col-sm-1 control-label">内容</label>
+									<div class="col-sm-11">
+										<!-- <textarea name="content" class="form-control" rows="3" placeholder="有什么想说的尽管说啦"></textarea> -->
+										 <script id="editor" type="text/plain" style="height:150px;">有什么要说的？发个帖子呗</script>
+									 </div>
+								</div>
+							</form>
+
+
+							<div class="newPost">
+								<input type="button" class="btn btn-success btn-lg btn-block" onclick="submitForm()" value="发帖">
+
+							</div>
+							
+							
+							
+
+
+
+
+
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+	<include file="Post:footer"/>
+</body>
+
+<script>
+	var ue = UE.getEditor('editor');
+	function submitForm()
+	{
+
+		document.getElementById('topicForm').submit();
+	}
+	
+</script>
+
+</html>

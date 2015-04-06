@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<!-- container-fluid -->
+	<head>
+		<title>网站后台管理</title>
+		<meta charset="UTF-8" />
+     	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/bootstrap-responsive.min.css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/unicorn.main.css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/unicorn.grey.css" class="skin-color" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	</head>
+	<body>
+
+		<include file="Common:common"/>
+		
+		<div id="content">
+			<div id="content-header">
+				<h1>后台管理首页</h1>
+			</div>
+			<ol class="breadcrumb">
+				  <li><a href="__APP__/Index/index">首页</a></li>
+				  <li class="active">后台首页</li>
+			</ol>
+			
+
+			<!-- 主内容区 -->
+			<div class="container-fluid">
+				<div class="row-fluid">
+					<div class="span12 center" style="text-align: center;">					
+						<ul class="stat-boxes">
+							<li><a href="__APP__/User/index"><div class="right"><strong>{$ucount}</strong>用户数</div></a></li>
+
+							<li><a href="__APP__/Topic/index"><div class="right"><strong>{$tcount}</strong>帖子数</div></a></li>
+
+							
+
+							<li><a href="__APP__/Admin/index"><div class="right"><strong>{$acount}</strong>管理员</div></a></li>
+						</ul>
+					</div>	
+				</div>
+
+
+
+
+			<div class="row-fluid" style="position:fixed;bottom: 80px;">
+				<div class="span12">
+					<div class="alert alert-info">
+						欢迎来到<strong>沈阳理工微社区后台管理系统</strong>. 别忘记注销哦!
+						
+					</div>					
+				</div>
+			</div>
+
+
+
+
+		</div>
+	</body>
+</html>

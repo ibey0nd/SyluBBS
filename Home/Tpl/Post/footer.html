@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+             <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>footer</title> 
+	<link href="__PUBLIC__/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="__PUBLIC__/css/my.css">
+</head>
+<body>
+	<div class="row footer">
+	<div class="col-lg-10 col-lg-offset-1">
+		<p class="text-align:center;" style="margin-top:20px;">Powered By Bey0nd  .   All Right Reserved.</p>
+		<p >
+			<ul class="ul-inline">
+				<li>友情链接：</li>
+				<foreach name="linkList" item="vo">
+					<li><a href="{$vo.url}">{$vo.name}</a></li>
+				</foreach>
+			</ul>
+		</p>
+	</div>
+</div>
+</body>
+</html>

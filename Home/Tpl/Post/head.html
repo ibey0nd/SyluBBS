@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+             <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>查看帖子</title>
+	<link href="__PUBLIC__/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="__PUBLIC__/css/my.css">
+</head>
+<body>
+	<!-- 导航start-->
+	<nav class="navbar navbar-inverse container-fluid" role="navigation" style="margin-top:20px;margin-left:90px;margin-right:90px;">
+	        <div class="container-fluid">
+	          <div class="navbar-header">
+	            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		              <span class="sr-only">首页导航</span>
+		              <span class="icon-bar"></span>
+		              <span class="icon-bar"></span>
+		              <span class="icon-bar"></span>
+	            </button>
+	            <a class="navbar-brand" href="__APP__">首页</a>
+	          </div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		            <ul class="nav navbar-nav">
+		                <li><a id="Reg" href="__APP__/User/Reg">注册</a></li>
+		                <li><a id="Reg" href="__ROOT__/admin.php/Login/login">后台管理</a></li>
+		            </ul>
+	            <form class="navbar-form navbar-right" role="search" method="post" action="__APP__/Login/doLogin">
+		              <div class="form-group">
+		                <input type="text" class="form-control" id ="username" placeholder="username" name="username">
+ 			   <input type="password" class="form-control" placeholder="password" id="password" name="password">
+		              </div>
+		             <a href="__APP__/User/profile/"><span id="usermark">{$_SESSION['username']}</span>&nbsp;&nbsp;&nbsp;</a>
+	             	 <button type="submit" class="btn btn-primary" name="login" id="login">登录</button>
+	            </form>
+	          </div>
+	        </div>
+</nav>
+<!-- 导航end -->
+<script>
+	// 隐藏对象。与visibility属性的hidden值不同，其不为被隐藏的对象保留其物理空间
+	
+
+	if(document.getElementById('usermark').innerHTML !="" && document.getElementById('usermark').innerHTML !=null)
+	{
+		// 登陆过了，把注册按钮，登陆框全部隐藏
+		document.getElementById('username').style.display="none";
+		document.getElementById('password').style.display="none";
+		document.getElementById('login').innerHTML="注销";
+		document.getElementById('Reg').style.display="none";
+		
+	}
+
+
+
+</script>
+
+
+
+
+	
+</body>
+</html>

@@ -1,0 +1,41 @@
+<div class="row left-list">
+		
+		<div class="col-lg-2 col-lg-offset-1">
+			<div class="panel panel-default mystickUp">
+				<div class="panel-heading">
+					全部分类
+				</div>
+				<div class="panel-body">
+					<ul class="list-unstyled list-topic">
+							
+						<foreach name="clubList" item="club">
+							
+							<li><a href="__APP__/Index/index/cid/{$club.cid}"/><img src="__PUBLIC__/img/tag.png">&nbsp;&nbsp;<font color="#333333">{$club.name}</font></a></li>
+							
+
+						</foreach>
+						
+
+					</ul>
+				</div>
+			</div>
+		</div>
+
+
+<script>
+	jQuery(function($) {
+                $(document).ready( function() {
+                // 调用stickup.js的方法，实现左边导航区跟随浏览器滑动
+                  $('.mystickUp').stickUp();
+                });
+              });
+	
+</script>
+
+<style>
+	.selected{
+		height: 90px;
+	}
+</style>
+<script type="text/javascript" src="__PUBLIC__/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/stickUp.js"></script>

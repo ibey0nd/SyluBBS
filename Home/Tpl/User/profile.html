@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+             <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>用户中心</title> 
+	<link href="__PUBLIC__/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="__PUBLIC__/css/my.css">
+<body>
+	<include file="Post:head"/>
+
+	<div class="row left-list">
+		
+		<div class="col-lg-2 col-lg-offset-1">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					用户操作
+				</div>
+				<div class="panel-body">
+					<ul class="list-unstyled list-topic">
+							<li><a href="__APP__/User/profile/id/1"><img src="__PUBLIC__/img/tag.png">&nbsp;&nbsp;<font color="#333333">修改密码</font></a></li>
+							<li><a href="__APP__/User/profile/id/2"><img src="__PUBLIC__/img/tag.png">&nbsp;&nbsp;<font color="#333333">修改资料</font></a></li>
+					
+					</ul>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="col-lg-3 col-lg-offset-1">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					修改密码
+				</div>
+				<div class="panel-body">
+					<form action="__APP__/User/changePwd" method="post"  onsubmit="return Login()">	
+					<div class="form-group">	
+						<div class="input-group">
+
+							  <div class="input-group">
+			                                                        <div class="input-group-addon">原密码</div>
+			                                                              <input class="form-control" type="password" name="oldPwd" id="oldPwd" placeholder="Enter email">
+			                                                  </div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="input-group">
+
+							<div class="input-group">
+			                                                        <div class="input-group-addon">新密码</div>
+			                                                              <input class="form-control" type="password" name="newPwd" id="newPwd">
+			                                                  </div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="input-group">
+
+							<div class="input-group">
+			                                                        <div class="input-group-addon">新密码</div>
+			                                                              <input class="form-control" type="password" name="newPwd1" id="newPwd1">
+			                                                  </div>
+						</div>
+					</div>
+	
+
+
+
+					<input type="submit" class="btn btn-primary btn-danger btn-lg btn-block" value="修改密码">
+				</form>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<script>
+		// function cls (obj) {
+		// 	obj.value="";
+		// }
+		function Login()
+		{
+			if(document.getElementById('oldPwd').value==""){
+				alert("原密码不能为空");
+				return false;
+			}
+			if(document.getElementById('newPwd1').value==""){
+				alert("新密码不能为空");
+				return false;
+			}
+			if(document.getElementById('newPwd').value !=document.getElementById('newPwd1').value){
+				alert("两次密码不一致");
+				return false;
+			}
+			if (document.getElementById('newPwd').value.length<6) {
+				alert("密码长度太短");
+				return false;
+			};
+		}
+	</script>
+</body>
+</html>

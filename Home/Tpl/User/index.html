@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>会员中心</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css">
+          <link rel="stylesheet" href="__PUBLIC__/css/my.css">
+          <link rel="stylesheet" href="__PUBLIC__/css/bootstrap-theme.min.css">
+          <script type="text/javascript" src="__PUBLIC__/js/jquery.min.js"></script>
+          <script src="__PUBLIC__/js/bootstrap.min.js"></script>
+          <script>
+          		$(document).ready(function() {
+			$(".title").mouseover(function(){
+				 $(this).animate({
+				   left: 30, opacity: 'show'
+				 });
+			});
+
+			$(".title").mouseout(function(){
+				$(this).animate({
+					"left":0,
+				});
+			});	
+		})
+          </script>
+          <style>
+		.userpicture{
+			margin-top: 10px;
+		}
+		.show ul li{
+			padding: 6px;
+		}
+		.userlink{
+			text-decoration: none;
+		}
+		.userlink:hover{
+			/*//border:#aad83e 1px solid;*/
+			
+			color:#2c2c2c;
+		}
+          </style>
+</head>
+
+<include file='Post:head'/>
+
+<body>
+
+	
+
+	<!-- 左边用户中心start -->
+	<div class="row slide-user">
+		<div class="col-lg-2 col-lg-offset-1 slide-user">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					个人信息
+				</div>
+				<div class="panel-body">
+					<img class="userpicture" src="__PUBLIC__/img/50.png" />
+					<div class="user-info">
+						
+						<h4> <img src="__PUBLIC__/img/8.gif">&nbsp;&nbsp;{$currUsername}</h4>
+
+						<h4><img src="__PUBLIC__/img/9.gif">&nbsp;&nbsp;{$level}</h4>
+					</div>
+
+					<div class="show">
+						<ul class="list-unstyled">
+							<li>共有&nbsp;<strong>{$topicCount}&nbsp;</strong>篇主题</li>
+							<li>经验值：{$currexp}</li>
+							<li>{$currMessage}</li>
+						</ul>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		
+	
+	<!-- 左边用户中心end -->
+		
+
+			<div class="col-lg-8 slide-user">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					用户帖子列表
+				</div>
+				<div class="panel-body">
+
+					<div class="panel">
+						<div class="panel-body">
+							<!-- 显示主题帖子列表 -->
+							
+							
+							<foreach name="data" item='vo'>
+
+
+							<!-- 一个帖子样式完成start -->
+							<img class="userpicture" src="__PUBLIC__/img/50.png" />
+							<div class="postcontent">
+								<a class="title" href="__APP__/Post/index/tid/{$vo.tid}" >{$vo.title}</a>
+								<div class="post-info">
+									<ul class="ul-inline">
+										<li><code>• {$vo.clubname}&nbsp;<img src="__PUBLIC__/img/picture.png"></code></li>
+
+										<li><code><b>• {$vo.uid}&nbsp;<img src="__PUBLIC__/img/phone.png"></b></code> </li>
+
+										<li><code><b>• {$vo.posttime|date='Y-m-d H:i:s',###}&nbsp;<img src="__PUBLIC__/img/phone.png"></b></code> </li>
+									</ul>
+								</div>
+							</div>
+							<!-- 一个帖子样式完成end-->
+							</foreach>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</body>
+</html>
